@@ -1,0 +1,25 @@
+
+test_suite(
+    name = "examples",
+    tests = [
+        "@examples//:wordcount_test",
+        "@examples//:intersection_test",
+        "@examples//:invalid_test",
+        "@examples//:invalid_failed_test",
+        "@examples//:extvar_env_test",
+        "@examples//:extvar_str_test",
+        "@examples//:tlavar_env_test",
+        "@examples//:tlavar_str_test",
+        "@examples//:extvar_files_generated_test",
+        "@examples//:extvar_files_test",
+        "@examples//:tla_code_files_test",
+        "@examples//:tla_str_files_test",
+        "@examples//:generated_src_test",
+        "@examples//:extvar_stamp_test",
+        "@examples//:tlavar_stamp_test",
+        "@examples//:yaml_stream_test",
+        "@examples//:imports_test",
+        "@examples//:strings_test",
+        "@examples//:output_file_contents_smoke_test",
+    ],
+)
