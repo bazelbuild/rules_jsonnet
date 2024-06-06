@@ -15,18 +15,32 @@ tasks:
     name: docs
     platform: ${{ platform }}
     working_directory: docs
-    test_flags:
-    - --define
-    - jsonnet_port=${{ jsonnet_port }}
     test_targets:
     - //...
 
-  examples:
+  examples_go:
     name: examples
     platform: ${{ platform }}
     working_directory: examples
     test_flags:
-    - --define
-    - jsonnet_port=${{ jsonnet_port }}
+    - "--extra_toolchains=@rules_jsonnet//jsonnet:go_jsonnet_toolchain"
+    test_targets:
+    - //...
+
+  examples_cpp:
+    name: examples
+    platform: ${{ platform }}
+    working_directory: examples
+    test_flags:
+    - "--extra_toolchains=@rules_jsonnet//jsonnet:cpp_jsonnet_toolchain"
+    test_targets:
+    - //...
+
+  examples_rust:
+    name: examples
+    platform: ${{ platform }}
+    working_directory: examples
+    test_flags:
+    - "--extra_toolchains=@rules_jsonnet//jsonnet:rust_jsonnet_toolchain"
     test_targets:
     - //...
